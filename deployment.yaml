@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: exo-dashboard
+spec:
+  selector:
+    matchLabels:
+      app: exo-dashboard
+  template:
+    metadata:
+      labels:
+        app: exo-dashboard
+    spec:
+      containers:
+        - name: exo-dashboard
+          image: 108051779495.dkr.ecr.us-east-1.amazonaws.com/exo-dashboard:latest
+          ports:
+            - containerPort: 5173
+          env:
+            - name: VITE_EXO_AUTH0_DOMAIN
+              value: "aesthisia.uk.auth0.com"
+            - name: VITE_EXO_AUTH0_CLIENT_ID
+              value: "4yeRZ71AawxDxbxVWfBjgLX3jYR554Yj"
+            - name: VITE_EXO_API_URL
+              value: "https://api.exopods.com/"
+            - name: VITE_EXO_GITHUB_APP_LINK
+              value: "https://github.com/apps/localhost-exopods"

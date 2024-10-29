@@ -1,0 +1,38 @@
+// ==========================================================================
+// # Cheat - Hot fixes and quick code; needs cleaning up afterwards
+// ==========================================================================
+
+.carousel .slide {
+  text-align: left;
+}
+
+.carousel .control-dots {
+  text-align: left;
+  margin-top: 90px;
+  right: 0;
+  bottom: -70px !important;
+
+  & .dot {
+    @apply h-2.5 w-2.5 rounded-full bg-[#6d6d6d] mx-1;
+    &.selected {
+      @apply w-6 bg-white;
+    }
+  }
+}
+
+.carousel.carousel-slider {
+  overflow: inherit !important;
+}
+
+.carousel-status {
+  display: hidden !important;
+  opacity: 0 !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #0c1015 inset !important;
+  -webkit-text-fill-color: #fff !important;
+}
